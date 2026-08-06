@@ -1,5 +1,6 @@
 import { Chip } from "@heroui/react";
 import { useEffect, useState } from "react";
+import parse from "html-react-parser";
 
 type ProjectCardProps = {
   category: string;
@@ -89,7 +90,7 @@ export default function ProjectCard({
           <h1 className="font-semibold text-[#FF791B]">{subtitle}</h1>
           <h2 className="text-2xl font-semibold">{name}</h2>
           <p className="text-[#86868B] font-medium text-pretty">
-            {description}
+            {parse(description)}
           </p>
           <div className="flex flex-wrap gap-2 mt-2">
             {options.map((option, index) => (
